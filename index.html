@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Maya de Almeida Gonçalves — Psicóloga</title>
-  <meta name="description" content="Maya de Almeida Gonçalves é psicóloga e oferece psicoterapia online e presencial." />
+  <meta name="description" content="Maya de Almeida Gonçalves é psicóloga e oferece psicoterapia e avaliação psicológica online e presencial." />
   <meta name="robots" content="index,follow" />
 
   <style>
@@ -16,25 +16,23 @@
       --muted: #6f647a;
       --line: #e6dfee;
       --accent: #d8a7c7;
-      --accent-2: #bfa2db;
       --shadow: 0 12px 30px rgba(120,90,140,0.15);
       --radius: 16px;
       --max: 980px;
     }
 
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      color: var(--text);
       background: linear-gradient(180deg, #fdfbfe, #f4eff8);
+      color: var(--text);
       line-height: 1.6;
     }
 
     a { color: inherit; text-decoration: none; }
     a:hover { text-decoration: underline; }
-
-    .wrap { max-width: var(--max); margin: 0 auto; padding: 28px 18px 80px; }
 
     header {
       position: sticky;
@@ -60,8 +58,8 @@
 
     nav {
       display: flex;
-      flex-wrap: wrap;
       gap: 10px;
+      flex-wrap: wrap;
       align-items: center;
     }
 
@@ -70,8 +68,8 @@
       border-radius: 10px;
       font-size: 14px;
       color: var(--muted);
-      border: 1px solid transparent;
       background: transparent;
+      border: 1px solid transparent;
       cursor: pointer;
     }
 
@@ -85,6 +83,12 @@
       gap: 6px;
       border-left: 1px solid var(--line);
       padding-left: 8px;
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px 18px 80px;
     }
 
     section { scroll-margin-top: 90px; }
@@ -103,19 +107,19 @@
       gap: 18px;
     }
 
-    h1 { font-size: clamp(28px, 4vw, 40px); margin-bottom: 10px; }
-    h2 { font-size: 22px; margin-bottom: 10px; }
+    h1 { font-size: clamp(28px, 4vw, 40px); }
+    h2 { font-size: 22px; }
     h3 { font-size: 16px; color: var(--muted); }
 
     p { color: var(--muted); }
 
     .btn {
+      display: inline-block;
       padding: 10px 14px;
       border-radius: 12px;
       border: 1px solid var(--accent);
       background: rgba(216,167,199,0.15);
       font-weight: 600;
-      cursor: pointer;
     }
 
     .btn.primary {
@@ -127,21 +131,22 @@
       list-style: none;
       padding: 0;
       display: grid;
-      gap: 10px;
+      gap: 12px;
     }
 
     .list li {
       background: #fbf9fd;
       border-radius: 12px;
-      padding: 12px;
+      padding: 14px;
       border: 1px solid var(--line);
       color: var(--muted);
     }
 
     footer {
-      margin-top: 30px;
+      margin-top: 40px;
       font-size: 13px;
       color: var(--muted);
+      text-align: center;
     }
 
     @media (max-width: 860px) {
@@ -151,15 +156,17 @@
 </head>
 
 <body>
+
 <header>
   <div class="topbar">
     <div class="brand">
-      <strong>Maya de Almeida Gonçalves</strong>
+      <strong>Maya de Almeida Gonçalves</strong><br>
       <small data-i18n="subtitle">Psicóloga • Atendimento online e presencial</small>
     </div>
 
     <nav>
       <a href="#about" data-i18n="nav_about">Sobre</a>
+      <a href="#experience" data-i18n="nav_experience">Experiência</a>
       <a href="#services" data-i18n="nav_services">Serviços</a>
       <a href="#blog" data-i18n="nav_blog">Blog</a>
       <a href="#contact" data-i18n="nav_contact">Contato</a>
@@ -173,138 +180,206 @@
 </header>
 
 <main class="wrap">
-  <section class="hero">
-    <div class="card">
-      <h1 data-i18n="hero_title">Psicoterapia com acolhimento, técnica e profundidade.</h1>
-      <p data-i18n="hero_text">
-        Atendimento psicológico para adultos, com foco em saúde mental, autoconhecimento e mudanças possíveis no cotidiano.
-      </p>
-      <button class="btn primary" data-i18n="hero_cta">Agendar conversa inicial</button>
-    </div>
 
-    <div class="card">
-      <h3 data-i18n="focus">Foco de atendimento</h3>
-      <ul class="list">
-        <li data-i18n="f1">Ansiedade e estresse</li>
-        <li data-i18n="f2">Autoestima e identidade</li>
-        <li data-i18n="f3">Relacionamentos</li>
-        <li data-i18n="f4">Avaliação psicológica</li>
-      </ul>
-    </div>
-  </section>
+<section class="hero">
+  <div class="card">
+    <h1 data-i18n="hero_title">Psicoterapia com acolhimento, técnica e profundidade.</h1>
+    <p data-i18n="hero_text">
+      Atendimento psicológico para adultos, com foco em saúde mental, autoconhecimento e mudanças possíveis no cotidiano.
+    </p>
+    <a
+      class="btn primary"
+      href="https://wa.me/5511975485238?text=Olá,%20gostaria%20de%20agendar%20uma%20conversa%20inicial."
+      target="_blank"
+      rel="noopener"
+      data-i18n="hero_cta"
+    >
+      Agendar conversa inicial
+    </a>
+  </div>
 
-  <section id="about" style="margin-top:20px">
-    <div class="card">
-      <h2 data-i18n="about_title">Sobre mim</h2>
-      <p data-i18n="about_text">
-        Sou psicóloga, com atuação clínica e experiência em avaliação psicológica, neuropsicologia e saúde mental.
-      </p>
-    </div>
-  </section>
+  <div class="card">
+    <h3 data-i18n="focus">Foco de atendimento</h3>
+    <ul class="list">
+      <li data-i18n="f1">Ansiedade e estresse</li>
+      <li data-i18n="f2">Autoestima e identidade</li>
+      <li data-i18n="f3">Relacionamentos</li>
+      <li data-i18n="f4">Avaliação psicológica</li>
+    </ul>
+  </div>
+</section>
 
-  <section id="services" style="margin-top:20px">
-    <div class="card">
-      <h2 data-i18n="services_title">Serviços</h2>
-      <ul class="list">
-        <li data-i18n="s1">Psicoterapia individual</li>
-        <li data-i18n="s2">Avaliação psicológica</li>
-        <li data-i18n="s3">Orientação psicológica</li>
-      </ul>
-    </div>
-  </section>
+<section id="about" style="margin-top:20px">
+  <div class="card">
+    <h2 data-i18n="about_title">Sobre</h2>
+    <p data-i18n="about_text">
+      Graduada em Psicologia pela Universidade de São Paulo (USP). Formada em Psicoterapia de Orientação Psicanalítica pelo Instituto Brasileiro de Psicanálise. Pós-graduada em Avaliação Psicológica pela Viver Mais Psicologia, em Psicologia do Trânsito pela Faculdade Líbano e em Neuropsicologia pela Faculdade Líbano.
+      <br><br>
+      Trabalhou com qualidade de vida e bem-estar do colaborador na Cielo. Atualmente, trabalha com psicoterapia e avaliação psicológica e neuropsicológica em consultório particular, além de prestar serviços como psicoterapeuta para o Hospital Sírio-Libanês.
+    </p>
+  </div>
+</section>
 
-  <section id="blog" style="margin-top:20px">
-    <div class="card">
-      <h2 data-i18n="blog_title">Blog</h2>
-      <p data-i18n="blog_text">
-        Conteúdos sobre saúde mental, psicologia na prática e reflexões clínicas.
-      </p>
-      <ul class="list">
-        <li>Ansiedade: quando procurar ajuda?</li>
-        <li>O que é avaliação psicológica?</li>
-        <li>Saúde mental no trabalho</li>
-      </ul>
-    </div>
-  </section>
+<section id="experience" style="margin-top:20px">
+  <div class="card">
+    <h2 data-i18n="exp_title">Experiência</h2>
+    <ul class="list">
 
-  <section id="contact" style="margin-top:20px">
-    <div class="card">
-      <h2 data-i18n="contact_title">Contato</h2>
-      <p>Email: maya.goncalves.psicologa@gmail.com<br>WhatsApp: +55 (11) 97548-5238</p>
-    </div>
-  </section>
+      <li>
+        <strong data-i18n="exp1_title">Psicoterapeuta</strong><br>
+        <span data-i18n="exp1_org">Hospital Sírio-Libanês · Autônomo</span><br>
+        <span data-i18n="exp1_time">jul de 2025 – o momento · Remoto</span>
+        <p data-i18n="exp1_desc">
+          Psicoterapia breve online para colaboradores e familiares; trabalho em equipe multidisciplinar; discussão de casos.
+        </p>
+      </li>
 
-  <footer>
-    © <span id="year"></span> Maya de Almeida Gonçalves
-  </footer>
+      <li>
+        <strong data-i18n="exp2_title">Psicóloga</strong><br>
+        <span data-i18n="exp2_org">Autônomo</span><br>
+        <span data-i18n="exp2_time">fev de 2020 – o momento · Híbrido</span>
+        <p data-i18n="exp2_desc">
+          Psicoterapia online para adolescentes e adultos. Avaliações psicológica e neuropsicológica online ou híbridas para crianças, adolescentes e adultos.
+        </p>
+      </li>
+
+      <li>
+        <strong data-i18n="exp3_title">Estagiária de Recursos Humanos</strong><br>
+        <span data-i18n="exp3_org">Cielo · Estágio</span><br>
+        <span data-i18n="exp3_time">jan de 2019 – jan de 2020 · São Paulo</span>
+        <p data-i18n="exp3_desc">
+          Atuação no programa De Bem com a Vida, com foco em saúde mental, pesquisas de bem-estar, trabalho em equipe multidisciplinar, gestão de programas de qualidade de vida e comunicação interna.
+        </p>
+      </li>
+
+    </ul>
+  </div>
+</section>
+
+<section id="services" style="margin-top:20px">
+  <div class="card">
+    <h2 data-i18n="services_title">Serviços</h2>
+    <ul class="list">
+      <li data-i18n="s1">Psicoterapia individual</li>
+      <li data-i18n="s2">Avaliação psicológica</li>
+      <li data-i18n="s3">Avaliação neuropsicológica</li>
+    </ul>
+  </div>
+</section>
+
+<section id="blog" style="margin-top:20px">
+  <div class="card">
+    <h2 data-i18n="blog_title">Blog</h2>
+    <ul class="list">
+      <li><a href="/blog/ansiedade.html">Ansiedade: quando procurar ajuda?</a></li>
+      <li><a href="/blog/avaliacao-psicologica.html">O que é avaliação psicológica?</a></li>
+      <li><a href="/blog/saude-mental-trabalho.html">Saúde mental no trabalho</a></li>
+    </ul>
+  </div>
+</section>
+
+<section id="contact" style="margin-top:20px">
+  <div class="card">
+    <h2 data-i18n="contact_title">Contato</h2>
+    <p>Email: maya.goncalves.psicologa@gmail.com<br>WhatsApp: +55 (11) 97548-5238</p>
+  </div>
+</section>
+
+<footer>
+  © <span id="year"></span> Maya de Almeida Gonçalves
+</footer>
+
 </main>
 
 <script>
-  const translations = {
-    pt: {
-      subtitle: "Psicóloga • Atendimento online e presencial",
-      nav_about: "Sobre",
-      nav_services: "Serviços",
-      nav_blog: "Blog",
-      nav_contact: "Contato",
-      hero_title: "Psicoterapia com acolhimento, técnica e profundidade.",
-      hero_text: "Atendimento psicológico para adultos, com foco em saúde mental, autoconhecimento e mudanças possíveis no cotidiano.",
-      hero_cta: "Agendar conversa inicial",
-      focus: "Foco de atendimento",
-      f1: "Ansiedade e estresse",
-      f2: "Autoestima e identidade",
-      f3: "Relacionamentos",
-      f4: "Avaliação psicológica",
-      about_title: "Sobre mim",
-      about_text: "Sou psicóloga, com atuação clínica e experiência em avaliação psicológica, neuropsicologia e saúde mental.",
-      services_title: "Serviços",
-      s1: "Psicoterapia individual",
-      s2: "Avaliação psicológica",
-      s3: "Orientação psicológica",
-      blog_title: "Blog",
-      blog_text: "Conteúdos sobre saúde mental, psicologia na prática e reflexões clínicas.",
-      contact_title: "Contato"
-    },
+const translations = {
+  pt: {
+    subtitle: "Psicóloga • Atendimento online e presencial",
+    nav_about: "Sobre",
+    nav_experience: "Experiência",
+    nav_services: "Serviços",
+    nav_blog: "Blog",
+    nav_contact: "Contato",
+    hero_title: "Psicoterapia com acolhimento, técnica e profundidade.",
+    hero_text: "Atendimento psicológico para adultos, com foco em saúde mental, autoconhecimento e mudanças possíveis no cotidiano.",
+    hero_cta: "Agendar conversa inicial",
+    focus: "Foco de atendimento",
+    f1: "Ansiedade e estresse",
+    f2: "Autoestima e identidade",
+    f3: "Relacionamentos",
+    f4: "Avaliação psicológica",
+    about_title: "Sobre",
+    about_text: "Graduada em Psicologia pela Universidade de São Paulo (USP). Formada em Psicoterapia de Orientação Psicanalítica pelo Instituto Brasileiro de Psicanálise. Pós-graduada em Avaliação Psicológica pela Viver Mais Psicologia, em Psicologia do Trânsito pela Faculdade Líbano e em Neuropsicologia pela Faculdade Líbano. Trabalhou com qualidade de vida e bem-estar do colaborador na Cielo. Atualmente, trabalha com psicoterapia e avaliação psicológica e neuropsicológica em consultório particular, além de prestar serviços como psicoterapeuta para o Hospital Sírio-Libanês.",
+    exp_title: "Experiência",
+    exp1_title: "Psicoterapeuta",
+    exp1_org: "Hospital Sírio-Libanês · Autônomo",
+    exp1_time: "jul de 2025 – o momento · Remoto",
+    exp1_desc: "Psicoterapia breve online para colaboradores e familiares; trabalho em equipe multidisciplinar; discussão de casos.",
+    exp2_title: "Psicóloga",
+    exp2_org: "Autônomo",
+    exp2_time: "fev de 2020 – o momento · Híbrido",
+    exp2_desc: "Psicoterapia online para adolescentes e adultos. Avaliações psicológica e neuropsicológica online ou híbridas para crianças, adolescentes e adultos.",
+    exp3_title: "Estagiária de Recursos Humanos",
+    exp3_org: "Cielo · Estágio",
+    exp3_time: "jan de 2019 – jan de 2020 · São Paulo",
+    exp3_desc: "Atuação no programa De Bem com a Vida, com foco em saúde mental, pesquisas de bem-estar, trabalho em equipe multidisciplinar, gestão de programas de qualidade de vida e comunicação interna.",
+    services_title: "Serviços",
+    s1: "Psicoterapia individual",
+    s2: "Avaliação psicológica",
+    s3: "Avaliação neuropsicológica",
+    blog_title: "Blog",
+    contact_title: "Contato"
+  },
 
-    en: {
-      subtitle: "Psychologist • Online and in-person sessions",
-      nav_about: "About",
-      nav_services: "Services",
-      nav_blog: "Blog",
-      nav_contact: "Contact",
-      hero_title: "Psychotherapy with care, technique, and depth.",
-      hero_text: "Psychological support for adults focused on mental health and self-understanding.",
-      hero_cta: "Schedule an initial consultation",
-      focus: "Areas of focus",
-      f1: "Anxiety and stress",
-      f2: "Self-esteem and identity",
-      f3: "Relationships",
-      f4: "Psychological assessment",
-      about_title: "About me",
-      about_text: "I am a psychologist with clinical experience in assessment and mental health.",
-      services_title: "Services",
-      s1: "Individual psychotherapy",
-      s2: "Psychological assessment",
-      s3: "Psychological guidance",
-      blog_title: "Blog",
-      blog_text: "Content about mental health and clinical psychology.",
-      contact_title: "Contact"
-    }
-  };
-
-  function setLang(lang) {
-    document.querySelectorAll("[data-i18n]").forEach(el => {
-      const key = el.getAttribute("data-i18n");
-      el.textContent = translations[lang][key];
-    });
-
-    document.documentElement.lang = lang === "en" ? "en" : "pt-BR";
+  en: {
+    subtitle: "Psychologist • Online and in-person sessions",
+    nav_about: "About",
+    nav_experience: "Experience",
+    nav_services: "Services",
+    nav_blog: "Blog",
+    nav_contact: "Contact",
+    hero_title: "Psychotherapy with care, technique, and depth.",
+    hero_text: "Psychological support for adults focused on mental health and self-understanding.",
+    hero_cta: "Schedule an initial consultation",
+    focus: "Areas of focus",
+    f1: "Anxiety and stress",
+    f2: "Self-esteem and identity",
+    f3: "Relationships",
+    f4: "Psychological assessment",
+    about_title: "About",
+    about_text: "Psychologist graduated from the University of São Paulo (USP), with training in Psychoanalytic Psychotherapy and postgraduate studies in Psychological Assessment, Traffic Psychology, and Neuropsychology. Currently works in private practice and as a psychotherapist for Sírio-Libanês Hospital.",
+    exp_title: "Experience",
+    exp1_title: "Psychotherapist",
+    exp1_org: "Sírio-Libanês Hospital · Self-employed",
+    exp1_time: "Jul 2025 – Present · Remote",
+    exp1_desc: "Brief online psychotherapy for employees and family members; multidisciplinary teamwork; case discussions.",
+    exp2_title: "Psychologist",
+    exp2_org: "Self-employed",
+    exp2_time: "Feb 2020 – Present · Hybrid",
+    exp2_desc: "Online psychotherapy and psychological and neuropsychological assessments for children, adolescents, and adults.",
+    exp3_title: "Human Resources Intern",
+    exp3_org: "Cielo · Internship",
+    exp3_time: "Jan 2019 – Jan 2020 · São Paulo, Brazil",
+    exp3_desc: "Worked in corporate wellbeing programs focusing on mental health, wellbeing research, and multidisciplinary health teams.",
+    services_title: "Services",
+    s1: "Individual psychotherapy",
+    s2: "Psychological assessment",
+    s3: "Neuropsychological assessment",
+    blog_title: "Blog",
+    contact_title: "Contact"
   }
+};
 
-  // garante que o site carregue em português
-  setLang("pt");
+function setLang(lang) {
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.getAttribute("data-i18n");
+    el.textContent = translations[lang][key];
+  });
+  document.documentElement.lang = lang === "en" ? "en" : "pt-BR";
+}
 
-  document.getElementById("year").textContent = new Date().getFullYear();
+setLang("pt");
+document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
 </body>
