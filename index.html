@@ -241,6 +241,31 @@
 
 <script>
   const translations = {
+    pt: {
+      subtitle: "Psicóloga • Atendimento online e presencial",
+      nav_about: "Sobre",
+      nav_services: "Serviços",
+      nav_blog: "Blog",
+      nav_contact: "Contato",
+      hero_title: "Psicoterapia com acolhimento, técnica e profundidade.",
+      hero_text: "Atendimento psicológico para adultos, com foco em saúde mental, autoconhecimento e mudanças possíveis no cotidiano.",
+      hero_cta: "Agendar conversa inicial",
+      focus: "Foco de atendimento",
+      f1: "Ansiedade e estresse",
+      f2: "Autoestima e identidade",
+      f3: "Relacionamentos",
+      f4: "Avaliação psicológica",
+      about_title: "Sobre mim",
+      about_text: "Sou psicóloga, com atuação clínica e experiência em avaliação psicológica, neuropsicologia e saúde mental.",
+      services_title: "Serviços",
+      s1: "Psicoterapia individual",
+      s2: "Avaliação psicológica",
+      s3: "Orientação psicológica",
+      blog_title: "Blog",
+      blog_text: "Conteúdos sobre saúde mental, psicologia na prática e reflexões clínicas.",
+      contact_title: "Contato"
+    },
+
     en: {
       subtitle: "Psychologist • Online and in-person sessions",
       nav_about: "About",
@@ -270,14 +295,17 @@
   function setLang(lang) {
     document.querySelectorAll("[data-i18n]").forEach(el => {
       const key = el.getAttribute("data-i18n");
-      if (translations[lang] && translations[lang][key]) {
-        el.textContent = translations[lang][key];
-      }
+      el.textContent = translations[lang][key];
     });
+
     document.documentElement.lang = lang === "en" ? "en" : "pt-BR";
   }
 
+  // garante que o site carregue em português
+  setLang("pt");
+
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
+
 </body>
 </html>
