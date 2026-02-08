@@ -1,11 +1,447 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Maya de Almeida Gonçalves</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Dr. [Full Name] — Psychologist</title>
+  <meta name="description" content="Dr. [Full Name] is a psychologist offering [online/in-person] therapy for [anxiety, relationships, etc.]. Book a consultation." />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Optional: replace with your own domain -->
+  <link rel="canonical" href="https://example.com/" />
+<!-- Estilos do site -->
+  <style>
+    :root {
+      --bg: #0b1220;
+      --panel: rgba(255,255,255,0.06);
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.72);
+      --line: rgba(255,255,255,0.14);
+      --accent: #9ad7c7;
+      --shadow: 0 12px 40px rgba(0,0,0,0.35);
+      --radius: 16px;
+      --max: 980px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text);
+      background: radial-gradient(1200px 600px at 20% 10%, rgba(154,215,199,0.18), transparent 55%),
+                  radial-gradient(900px 500px at 90% 20%, rgba(154,175,215,0.14), transparent 55%),
+                  var(--bg);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 28px 18px 80px; }
+
+    /* Header / Nav */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(to bottom, rgba(11,18,32,0.92), rgba(11,18,32,0.65));
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 200px;
+    }
+    .brand strong { letter-spacing: 0.2px; }
+    .brand small { color: var(--muted); }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: flex-end;
+    }
+    nav a {
+      padding: 8px 10px;
+      border-radius: 10px;
+      color: var(--muted);
+      border: 1px solid transparent;
+    }
+    nav a:hover {
+      color: var(--text);
+      border-color: var(--line);
+      background: rgba(255,255,255,0.04);
+      text-decoration: none;
+    }
+
+    /* Sections */
+    section { scroll-margin-top: 90px; }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 18px;
+    }
+
+    h1, h2, h3 { line-height: 1.2; margin: 0 0 10px; }
+    h1 { font-size: clamp(28px, 4vw, 42px); letter-spacing: -0.4px; }
+    h2 { font-size: 22px; margin-top: 0; }
+    h3 { font-size: 16px; color: var(--muted); font-weight: 600; letter-spacing: 0.2px; }
+
+    p { margin: 0 0 12px; color: var(--muted); }
+
+    .hero {
+      padding-top: 26px;
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 14px;
+      width: fit-content;
+    }
+    .dot {
+      width: 8px; height: 8px; border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(154,215,199,0.16);
+    }
+
+    .ctaRow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      font-weight: 600;
+      letter-spacing: 0.2px;
+      cursor: pointer;
+    }
+    .btn.primary {
+      border-color: rgba(154,215,199,0.55);
+      background: rgba(154,215,199,0.14);
+    }
+    .btn:hover { text-decoration: none; filter: brightness(1.08); }
+
+    .meta {
+      display: grid;
+      gap: 10px;
+    }
+    .meta .item {
+      padding: 14px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+    }
+    .meta .item strong { display: block; margin-bottom: 4px; }
+    .meta .item span { color: var(--muted); font-size: 14px; }
+
+    /* Lists */
+    .list {
+      display: grid;
+      gap: 10px;
+      margin: 10px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .list li {
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      color: var(--muted);
+    }
+
+    /* FAQ */
+    details {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.03);
+      padding: 12px 14px;
+    }
+    details summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--text);
+      list-style: none;
+    }
+    details summary::-webkit-details-marker { display: none; }
+    details p { margin-top: 10px; }
+
+    /* Contact form */
+    form { display: grid; gap: 10px; margin-top: 12px; }
+    input, textarea {
+      width: 100%;
+      padding: 12px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(11,18,32,0.55);
+      color: var(--text);
+      outline: none;
+    }
+    input::placeholder, textarea::placeholder { color: rgba(255,255,255,0.45); }
+    textarea { min-height: 120px; resize: vertical; }
+
+    footer {
+      margin-top: 26px;
+      color: rgba(255,255,255,0.55);
+      font-size: 13px;
+    }
+
+    /* Mobile */
+    @media (max-width: 860px) {
+      .hero, .grid { grid-template-columns: 1fr; }
+      nav { justify-content: flex-start; }
+      .brand { min-width: 0; }
+    }
+  </style>
 </head>
+<!-- Estrutura do Site -->
 <body>
-    <h1>Olá! Eu sou a Maya!</h1>
-    <p>Essa é minha página!</p>
+  <header>
+    <div class="topbar">
+      <div class="brand">
+        <strong>Dr. [Full Name]</strong>
+        <small>Psychologist • [City] • [Online / In-person]</small>
+      </div>
+      <nav aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#approach">Approach</a>
+        <a href="#fees">Fees</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- HERO -->
+    <section class="hero" id="top" aria-label="Intro">
+      <div class="card">
+        <div class="badge"><span class="dot"></span> Accepting new clients • [Month/Year]</div>
+        <h1>Therapy that’s structured, warm, and evidence-based.</h1>
+        <p>
+          I help adults and couples work through <strong>[anxiety]</strong>, <strong>[stress]</strong>, <strong>[relationships]</strong>, and
+          <strong>[life transitions]</strong> using approaches tailored to your goals.
+        </p>
+        <p>
+          Sessions available <strong>[online]</strong> and <strong>[in-person]</strong>. Languages: <strong>[English / Portuguese]</strong>.
+        </p>
+        <div class="ctaRow">
+          <a class="btn primary" href="#contact">Book a consultation</a>
+          <a class="btn" href="#services">See services</a>
+        </div>
+        <p style="margin-top:14px; font-size: 14px;">
+          <strong>Registration:</strong> [License/CRP #] • <strong>Email:</strong> <a href="mailto:hello@example.com">hello@example.com</a>
+        </p>
+      </div>
+
+      <aside class="meta">
+        <div class="item">
+          <strong>Specialties</strong>
+          <span>[Anxiety], [Burnout], [Self-esteem], [Relationships]</span>
+        </div>
+        <div class="item">
+          <strong>Client focus</strong>
+          <span>[Adults], [Couples], [Young adults], [Professionals]</span>
+        </div>
+        <div class="item">
+          <strong>Session format</strong>
+          <span>[50 minutes] • [Weekly / Biweekly] • [Online/In-person]</span>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" style="margin-top:18px;">
+      <div class="card">
+        <h2>About</h2>
+        <p>
+          Hi, I’m <strong>Dr. [Full Name]</strong>, a licensed psychologist based in <strong>[City]</strong>.
+          I work with clients who want practical tools and deeper understanding—without judgment.
+        </p>
+        <p>
+          <strong>Background:</strong> [Degree], [University], [Year]. Additional training in [CBT / ACT / Schema / EMDR / Mindfulness].
+        </p>
+        <ul class="list">
+          <li><strong>Education:</strong> [Your degree + institution]</li>
+          <li><strong>Clinical interests:</strong> [What you care about]</li>
+          <li><strong>Style:</strong> [Collaborative, structured, compassionate]</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" style="margin-top:18px;">
+      <div class="card">
+        <h2>Services</h2>
+        <div class="grid">
+          <div>
+            <h3>Individual therapy</h3>
+            <p>[Who this is for and what issues you address. 2–3 sentences.]</p>
+            <ul class="list">
+              <li>[Anxiety / Panic / Phobias]</li>
+              <li>[Depression / Low mood]</li>
+              <li>[Stress / Burnout]</li>
+              <li>[Self-esteem / Confidence]</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Couples therapy</h3>
+            <p>[How you work with couples, typical goals, and what sessions look like.]</p>
+            <ul class="list">
+              <li>[Communication]</li>
+              <li>[Conflict patterns]</li>
+              <li>[Trust / repair]</li>
+              <li>[Life transitions]</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- APPROACH -->
+    <section id="approach" style="margin-top:18px;">
+      <div class="card">
+        <h2>Approach</h2>
+        <p>
+          My work is grounded in evidence-based psychology and adapted to your needs. We’ll start by clarifying your goals,
+          then build a plan with tools you can use between sessions.
+        </p>
+        <ul class="list">
+          <li><strong>Assessment & goals:</strong> [What happens in the first sessions]</li>
+          <li><strong>Tools & practice:</strong> [Skills, exercises, homework if any]</li>
+          <li><strong>Reflection & change:</strong> [Longer-term work, patterns, meaning]</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FEES -->
+    <section id="fees" style="margin-top:18px;">
+      <div class="card">
+        <h2>Fees & logistics</h2>
+        <ul class="list">
+          <li><strong>Session length:</strong> [50 minutes]</li>
+          <li><strong>Fee:</strong> [R$ ___] (online) • [R$ ___] (in-person)</li>
+          <li><strong>Payment:</strong> [Pix / Card / Transfer]</li>
+          <li><strong>Cancellation policy:</strong> [e.g., 24 hours notice]</li>
+          <li><strong>Insurance:</strong> [Yes/No + details if applicable]</li>
+          <li><strong>Location:</strong> [Address / neighborhood] • <strong>Online:</strong> [Platform]</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" style="margin-top:18px;">
+      <div class="card">
+        <h2>FAQ</h2>
+        <div style="display:grid; gap:10px; margin-top: 10px;">
+          <details>
+            <summary>How do I know if therapy is right for me?</summary>
+            <p>
+              [Short, reassuring explanation. Mention that the first session clarifies goals and fit.]
+            </p>
+          </details>
+          <details>
+            <summary>What happens in the first session?</summary>
+            <p>
+              [Intake, concerns, history, goals, and a plan. Keep it simple.]
+            </p>
+          </details>
+          <details>
+            <summary>Do you offer online sessions?</summary>
+            <p>
+              [Yes/no + tools/platform + privacy note.]
+            </p>
+          </details>
+          <details>
+            <summary>What if I’m in crisis?</summary>
+            <p>
+              If you are in immediate danger or need urgent help, contact local emergency services right away.
+              You can also reach out to a trusted person near you. [Add local resources/phone numbers here.]
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" style="margin-top:18px;">
+      <div class="card">
+        <h2>Contact</h2>
+        <p>
+          For scheduling and questions, reach out using the form below or contact me directly:
+          <strong>Email:</strong> <a href="mailto:hello@example.com">hello@example.com</a> •
+          <strong>Phone/WhatsApp:</strong> <a href="tel:+5500000000000">+55 (00) 00000-0000</a>
+        </p>
+
+        <!-- Minimal contact form: uses mailto (no backend needed). You can replace this with a real form endpoint later. -->
+        <form action="mailto:hello@example.com" method="post" enctype="text/plain">
+          <input name="name" placeholder="Your name" required />
+          <input name="email" type="email" placeholder="Your email" required />
+          <input name="subject" placeholder="Subject" />
+          <textarea name="message" placeholder="Message (briefly describe what you’re looking for)"></textarea>
+          <button class="btn primary" type="submit">Send</button>
+          <p style="font-size: 13px; margin-top: 4px;">
+            <strong>Privacy note:</strong> Please avoid sharing sensitive details by email. We can discuss them during a session.
+          </p>
+        </form>
+      </div>
+
+      <footer>
+        <p>
+          © <span id="year"></span> Dr. [Full Name]. All rights reserved.
+          <br />
+          <span style="color: rgba(255,255,255,0.55);">
+            This website provides general information and does not constitute emergency or medical advice.
+          </span>
+        </p>
+      </footer>
+    </section>
+  </main>
+<!-- Parte dinâmica do site  -->
+  <script>
+    // Just for the footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
